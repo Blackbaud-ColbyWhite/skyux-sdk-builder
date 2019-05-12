@@ -120,7 +120,11 @@ function getConfig(config) {
     browserConsoleLogOptions: {
       level: 'log'
     },
-    reporters: ['mocha', 'coverage-istanbul'],
+    reporters: ['mocha', 'coverage-istanbul', 'junit'],
+    junitReporter: {
+      useBrowserName: false,
+      outputDir: path.join(process.cwd(), 'test')
+    },
     port: 9876,
     colors: logger.logColor,
     logLevel: config.LOG_INFO,
